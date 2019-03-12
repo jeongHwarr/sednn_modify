@@ -1,6 +1,6 @@
 # Speech enhancement using deep neural networks (Keras implementation)
-# by Yong Xu and Qiuqiang Kong
-# Modified Jeonghwa Yoo (Env: python 3.5 and windows OS)
+### by Yong Xu and Qiuqiang Kong
+### Modified Jeonghwa Yoo (Env: python 3.5 and windows OS)
 
 This code uses deep neural network (DNN) to do speech enhancement. This code is a Keras implementation of The paper:
 
