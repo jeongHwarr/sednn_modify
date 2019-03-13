@@ -4,8 +4,6 @@ from work_module import prepare_data, main_dnn, evaluate
 
 CURRENT_PATH = os.path.split(os.getcwd())[-1]
 
-MODEL_NAME='SE-SegCaps'
-
 MINIDATA = True #MINIDATA
 
 if MINIDATA == True:
@@ -29,7 +27,7 @@ def get_args():
     parser.add_argument('--fft', default=256, type=int,
                          help="FFT size")
     parser.add_argument('--window', default=256, type=int,
-                         help="FFT size")
+                         help="window size")
     parser.add_argument('--overlap', default=192, type=int,
                      help="overlap size of spectrogram") 
     parser.add_argument('--n_concat', default=7, type=int,
@@ -40,7 +38,8 @@ def get_args():
     parser.add_argument('--te_snr', default=0, type=int, 
                         help="SNR of test data") 
     
-    parser.add_argument('--iter', default=10000, type=int)
+    parser.add_argument('--iter', default=10000, type=int,
+                        help="number of iteration for training")
     parser.add_argument('--debug_inter', default=1000, type=int, 
                         help="Interval to debug model")
     parser.add_argument('--save_inter', default=5000, type=int, 
@@ -52,7 +51,7 @@ def get_args():
                         help="If value is 1, visualization of result of inference") 
 
     parser.add_argument('--train', default=1, type=int, choices=[0,1],
-                        help="If the value is 1, run trainining") 
+                        help="If the value is 1, run training") 
     parser.add_argument('--test', default=1, type=int, choices=[0,1],
                          help="If the value is 1, run test")
 
@@ -70,6 +69,8 @@ if __name__ == '__main__':
     DIRECTORY['TE_SPEECH_DIR'] = TE_SPEECH_DIR
     DIRECTORY['TE_NOISE_DIR'] = TE_NOISE_DIR
 
+    assert args.iter >= args.debug_inter and args.iter >=args.save_inter, "Number of training iterations should greater than or equal to the debugging and store interval"
+     
     prepare_data.create_mixture_csv(DIRECTORY, args, mode='train')
     prepare_data.create_mixture_csv(DIRECTORY, args, mode='test')
     
