@@ -1,12 +1,14 @@
 # Speech enhancement using deep neural networks (Keras implementation)
-by Yong Xu and Qiuqiang Kong
-Modified Jeonghwa Yoo (Env: python 3.5 and windows OS)
+### by Yong Xu and Qiuqiang Kong
+### Modified Jeonghwa Yoo (Env: python 3.5 and windows OS)
 
 This code uses deep neural network (DNN) to do speech enhancement. This code is a Keras implementation of The paper:
 
 [1] Xu, Y., Du, J., Dai, L.R. and Lee, C.H., 2015. A regression approach to speech enhancement based on deep neural networks. IEEE/ACM Transactions on Audio, Speech and Language Processing (TASLP), 23(1), pp.7-19.
 
-Original C++ implementation is here (https://github.com/yongxuUSTC/DNN-for-speech-enhancement) by Yong Xu (yong.xu@surrey.ac.uk). This Keras re-implementation is done by Qiuqiang Kong (q.kong@surrey.ac.uk)
+Original C++ implementation is here (https://github.com/yongxuUSTC/DNN-for-speech-enhancement) by Yong Xu (yong.xu@surrey.ac.uk). 
+
+Original Keras re-implementation(https://github.com/yongxuUSTC/sednn/tree/master/mixture2clean_dnn) is done by Qiuqiang Kong (q.kong@surrey.ac.uk)
 
 <pre>
 Noise(0dB)   PESQ
